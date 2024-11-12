@@ -1,0 +1,22 @@
+.pageT {
+  justify-content: center;
+  display: flex;
+}
+.btn-silde {
+  background-color: aquamarine;
+  align-items: center;
+  padding: 20px 30px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.btn-silde:hover {
+    background-color: aqua;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+  margin: 20px;
+}

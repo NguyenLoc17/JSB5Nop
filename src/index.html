@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSB5-TanLoc</title>
+
+    <link rel="stylesheet" href="../src/main.css">
+</head>
+
+<body>
+    <!-- Tạo slide trang cho bài tập  -->
+    <div class="pageT">
+        <button class="btn-silde" onclick="pageBT(1)">BT 1</button>
+        <button class="btn-silde" onclick="pageBT(2)">BT 2</button>
+        <button class="btn-silde" onclick="pageBT(3)">BT 3</button>
+        <button class="btn-silde" onclick="pageBT(4)">BT 4</button>
+        <button class="btn-silde" onclick="pageBT(5)"></button>
+    </div>
+
+    <!-- Trang bài tập -->
+    <div id="page1" class="page">
+        <h2>Chào mừng bạn đến với trang quản lý tuyển sinh</h2>
+        <!-- Hiện thông tin cần nhập  -->
+        <label>Điểm chuẩn : <input type="number" id="diemChuan" step="0.1"></label>
+        <hr>
+        <label>Điểm môn 1 : <input type="number" id="score1" step="0.1"></label>
+        <hr>
+        <label>Điểm môn 2 : <input type="number" id="score2" step="0.1"></label>
+        <hr>
+        <label>Điểm môn 3 : <input type="number" id="score3" step="0.1"></label>
+        <hr>
+        <label>Khu vực (A, B, C, hoặc X): <input type="text" id="khuVuc"></label><br>
+        <p>Điểm khu vực gồm có: A = +2; B = +1; C = +0.5; Không thuộc diện ưu tiên "X = 0"</p>
+        <hr>
+        <label>Đối tượng (1, 2, 3, hoặc 0): <input type="number" id="doiTuong"></label><br>
+        <p>Đối tượng ưu tiên gồm có: Diện 1 = +2.5; Diện 2 = +1.5; Diện 3 = +1; Không thuộc đối tượng ưu tiện là "0"</p>
+        <hr>
+
+        <button onclick="kiemTra()">Kiểm tra</button>
+
+        <h2 id="result"></h2>
+    </div>
+
+    <!-- Trang tiền điện  -->
+    <div id="page2" class="page">
+        <h2>Khách hàng cần tính tiền điện sao? Đây là đúng rồi !!!</h2>
+        <label>Tên đăng ký sử dụng điện: <input type="text" id="name"></label>
+        <hr>
+        <label>Số kWh điện tiêu thụ: <input type="number" id="soKwh"></label><br><br>
+        <hr>
+        <ul>
+            <li>Giá trị thanh toán như sau</li>
+            <li>50kw đầu: 500đ/kw</li>
+            <li>50kw tiếp theo: 650đ/kw</li>
+            <li>100kw kế: 850đ/kw</li>
+            <li>150kw kế: 1100đ/kw</li>
+            <li>Còn lại: 1300đ/kw</li>
+        </ul>
+
+        <button onclick="tinhBill()">Tính Tiền</button>
+
+        <h2 id="Result"></h2>
+    </div>
+
+    <!-- Trang thuế thu nhập  -->
+    <div id="page3" class="page">
+        <h2>Tiền nhiều để làm gì? Đóng thuế nhé. Cập nhập thêm để biết số tiền cần đóng nè.</h2>
+        <label>Họ tên: <input type="text" id="Name"></label>
+        <label>Tổng thu nhập năm (triệu VND): <input type="number" id="tongThuNhap"></label>
+        <label>Số người phụ thuộc: <input type="number" id="nguoiPhuThuoc"></label>
+        <hr>
+
+        <button onclick="calculateTax()">Tính Thuế</button>
+
+        <h2 id="Result3"></h2>
+    </div>
+
+    <!-- Hóa đơn cáp  -->
+    <div id="page4" class="page">
+        <h2>Tính Hóa Đơn Cáp Cho Khách Hàng</h2>
+        <!-- chia mã khách hàng -->
+        <div class="input-maKH">
+            <label>Mã khách hàng: <input type="text" id="idKH"></label>
+        </div>
+        <hr>
+        <!-- Loại khách hàng -->
+        <div class="input-maKH">
+            <label>Loại khách hàng:
+                <select id="loaiKH" onchange="idInput()">
+                    <option value="nhaDan">Nhà dân</option>
+                    <option value="doanhNghiep">Doanh nghiệp</option>
+                </select>
+            </label>
+        </div>
+        <hr>
+
+        <!-- Số kết nối (chỉ hiện khi là Doanh nghiệp) -->
+        <div class="input-maKH" id="soKetNoiKenh">
+            <label>Số kênh kết nối: <input type="number" id="soKetNoi" min="0" disabled></label>
+        </div>
+        <hr>
+
+        <!-- Số kênh cao cấp -->
+        <div class="input-maKH">
+            <label>Số kênh cao cấp: <input type="number" id="soKenhPro" min="0"></label>
+        </div>
+        <hr>
+
+        <button onclick="calculateBill()">Tính Hóa Đơn</button>
+
+        <h2 id="Result4"></h2>
+
+    </div>
+    <div id="page5" class="page">
+        <h2>Trang 5</h2>
+        <p>Nội dung cho Trang 5</p>
+    </div>
+
+    <script src="../JS/main.js"></script>
+</body>
+
+</html>
